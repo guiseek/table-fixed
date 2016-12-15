@@ -1,0 +1,157 @@
+html {
+    /*overflow: hidden;*/
+    height: 100%;
+}
+#flex-table-container {
+    background-color: #FFF;
+    /*margin: 50px;*/
+    height: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    z-index: 0;
+}
+
+.flex-table {
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+}
+
+.flex-table .table-header {
+    flex: 0 100% auto;
+    overflow: scroll;
+    margin: auto;
+}
+
+.flex-table .flex-table-content {
+  flex: 1;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+.flex-table .table-header tr,
+.flex-table .flex-table-content tr {
+  display: flex;
+}
+.column-* {
+  flex: 1;
+}
+.column-1 { flex: 1; }
+.column-2 { flex: 2; }
+.column-3 { flex: 3; }
+.column-4 { flex: 4; }
+.column-25 { flex: 0 0 25px }
+.column-50 { flex: 0 0 50px }
+.column-120 { flex: 0 0 120px }
+.column-200 { flex: 0 0 200px }
+.column-300 { flex: 0 0 300px }
+.column-400 { flex: 0 0 400px }
+
+/*.flex-table * {
+  background: #fff;
+}*/
+.flex-table .table-footer {
+    flex: 1 100% auto;
+}
+
+/* Support Bootstrap's table class */
+.flex-table table,
+.flex-table .table {
+    table-layout: fixed; /* Prevents columns from adjusting to content */
+    margin: 0;
+}
+
+.flex-table table td {
+    overflow: hidden;
+}
+
+.flex-table table th {
+    /*overflow: hidden;
+    position: relative;*/
+    white-space: nowrap;
+}
+
+.flex-table .resize-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    width: 6px;
+    cursor: ew-resize;
+}
+
+.flex-table .resize-handle.dragging,
+.flex-table .resize-handle:hover {
+    background-color: RGBA(75, 128, 255, .5);
+}
+
+/*.fixed {
+  position: fixed;
+}*/
+.column-120.fixed {
+  width: 120;
+}
+td.fixed { z-index: 1; }
+tr.fixed th {
+  z-index: 0;
+}
+.column-300.fixed { z-index: 0; }
+
+.flex-table-content tbody tr:first-child {
+  
+}
+tr.fixrel.fixed + tr {
+  margin-top: 40px;
+}
+.column-120.fixed + th,
+.column-120.fixed + td {
+  margin-left: 120;
+}
+.fixed {
+  position: absolute;
+  /*left: 300px;*/
+}
+.relative {
+  position: relative;
+}
+th.column-120.fixed {
+  position: fixed;
+  /*position: absolute;*/
+  z-index: 10;
+}
+.column-* {
+  z-index: 1;
+}
+/*.flex-table-content { z-index: 1; }*/
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+.order-4 { order: 4; }
+.order-5 { order: 5; }
+
+flex-table tbody tr:nth-child(2n-1) td:not(:first-child) {
+  background-color: #f5f5f5;
+}
+flex-table tr th,
+flex-table tr td.fixrel {
+  color: #fff;
+  background-color: #31bc86;
+}
+flex-table tr th:first-child {
+  background-color: #666;
+}
+flex-table tbody tr:hover td:not(:first-child) {
+    background-color: rgba(129,208,177,.3);
+}
+
+flex-table tbody tr td:not(:first-child) {
+  transition: all .125s ease-in-out;
+}
+flex-table .table > thead > tr > th {
+  border-width: 0;
+}
+flex-table .table > tbody > tr > td {
+  border-width: 0;
+}

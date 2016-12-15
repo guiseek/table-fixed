@@ -1,0 +1,43 @@
+<html ng-app="example">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="fixed.css">
+    </head>
+    <body style="background-color: #EDEDED;" ng-controller="ExampleCtrl">
+        <flex-table rows="rows">
+          <script type="text/ng-template">
+            <thead>
+              <tr class="fixrel">
+                  <th class="column-120 fixed">Equipe</th>
+                  <th class="column-50">J</th>
+                  <th class="column-50">VIT</th>
+                  <th class="column-50">E</th>
+                  <th class="column-50">DER</th>
+                  <th class="column-50">GP</th>
+                  <th class="column-50">GC</th>
+                  <th class="column-50">SG</th>
+                  <th class="column-50">PTS</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="col in $ctrl.rows">
+                    <td class="column-120 fixrel">{{col.equipe}}</td>
+                    <td class="column-50">{{col.j}}</td>
+                    <td class="column-50">{{col.vit}}</td>
+                    <td class="column-50">{{col.e}}</td>
+                    <td class="column-50">{{col.der}}</td>
+                    <td class="column-50">{{col.gp}}</td>
+                    <td class="column-50">{{col.gc}}</td>
+                    <td class="column-50">{{col.sg}}</td>
+                    <td class="column-50">{{col.pts}}</td>
+                </tr>
+            </tbody>
+          </script>
+        </flex-table>
+        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="dist/gumga-flextable.js"></script>
+        <script src="ctrl.js"></script>
+    </body>
+</html>
